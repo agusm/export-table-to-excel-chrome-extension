@@ -1,0 +1,23 @@
+{
+    "manifest_version": 2,
+    "name": "table-to-excel",
+    "short_name": "convert-to-excel",
+    "description": "Table to Excel Extensions Unofficial Version",
+    "version": "1.0",
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_popup": "index.html",
+        "default_title": "Table to Excel Extensions Unofficial Version"
+    },
+    "content_scripts": [{
+        "matches": [
+            "<all_urls>"
+        ],
+        "js": [
+            "app.js"
+        ]
+    }],
+    "permissions": [
+        "activeTab"
+    ]
+}

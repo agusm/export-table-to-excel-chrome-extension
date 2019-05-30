@@ -1,20 +1,20 @@
 const tbl = document.getElementById('tblData')
-let row = tbl.getElementsByTagName('tbody')[0].getElementsByTagName('tr')
-let items = Array.from(row)
-items.shift()
+let tr = tbl.getElementsByTagName('tbody')[0].getElementsByTagName('tr')
+let rows = Array.from(tr)
+rows.shift()
 
 let table = document.createElement("table");
-table.setAttribute('id', 'table-export')
+// table.setAttribute('id', 'table-export')
 
-for (let item of items) {
+for (let row of rows) {
     let tr = document.createElement('tr')
-    let data = Array.from(item.getElementsByTagName('td'))
+    let columns = Array.from(row.getElementsByTagName('td'))
 
     let index = 0
-    for (let datum of data) {
+    for (let column of columns) {
         if (index != 2) {
             let td = document.createElement('td')
-            td.innerHTML = datum.innerText
+            td.innerHTML = column.innerText
 
             tr.appendChild(td)
         }
